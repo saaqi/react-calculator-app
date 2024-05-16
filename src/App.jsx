@@ -8,7 +8,6 @@ function App() {
   const inputRef = useRef(null);
   const resultRef = useRef(null);
   const [result, setResult] = useState(0);
-  const [input, setInput] = useState(0);
 
   function plus(e) {
     e.preventDefault();
