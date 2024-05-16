@@ -29,20 +29,12 @@ function App() {
 
   function resetInput(e) {
     e.preventDefault();
-    inputRef.current.value = null;
-    inputRef.current.focus();
+    document.querySelector('.input-field').value = '';
   };
 
   function resetResult(e) {
     e.preventDefault();
     setResult(0);
-    inputRef.current.focus();
-  };
-
-  function resetAll(e) {
-    e.preventDefault();
-    resetInput(e);
-    resetResult(e);s
   };
 
   return (
@@ -71,10 +63,9 @@ function App() {
           <button className="btn btn-outline-dark" onClick={divide}>Divide /</button>
         </div>
         <br />
-        <div className="btn-group mt-4 shadow-sm">
-          <button className="btn btn-danger border-dark" onClick={resetInput}>Reset Input</button>
-          <button className="btn btn-danger border-dark" onClick={resetResult}>Reset Result</button>
-          <button className="btn btn-danger border-dark" onClick={resetAll}>Reset All</button>
+        <div className="mt-4 shadow-sm">
+          <button className="btn btn-danger me-2" onClick={resetInput}>Reset Input</button>
+          <button className="btn btn-danger" onClick={resetResult}>Reset Result</button>
         </div>
       </form>
     </div>
