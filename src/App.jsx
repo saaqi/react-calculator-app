@@ -42,13 +42,13 @@ function App() {
   function resetAll(e) {
     e.preventDefault();
     resetInput(e);
-    resetResult(e);s
+    resetResult(e);
   };
 
   return (
     <div className="App container pt-5">
       <div>
-        <h1 className="fs-2">Saaqi's React Calculator Assignment.</h1>
+        <h1 className="fs-2">Saaqi's React Calculator App.</h1>
       </div>
       <form>
         <p
