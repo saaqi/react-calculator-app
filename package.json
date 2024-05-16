@@ -1,5 +1,6 @@
 {
   "name": "saaqi-react-caclulator-app",
+  "description": "A simple calculator app using React.js and Vite as the bundler.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
