@@ -1,8 +1,6 @@
-import {
-  useState,
-  useRef
-} from "react";
+import { useState, useRef } from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   const inputRef = useRef(null);
@@ -31,8 +29,7 @@ function App() {
 
   function resetInput(e) {
     e.preventDefault();
-    const valueField = document.querySelector('.input-field');
-    valueField.value = '';
+    document.querySelector('.input-field').value = '';
   };
 
   function resetResult(e) {
@@ -41,27 +38,35 @@ function App() {
   };
 
   return (
-    <div className="App container">
+    <div className="App container pt-5">
       <div>
-        <h1>Simplest Working Calculator</h1>
+        <h1 className="fs-2">Saaqi's React Calculator Assignment.</h1>
       </div>
       <form>
-        <p className='result' ref={resultRef}>
+        <p
+          className='result py-1 my-4 rounded shadow-sm bg-warning text-bg-warning fw-medium fs-2'
+          ref={resultRef}
+        >
           {result}
         </p>
         <input
-          className="input-field"
+          className="input-field w-100"
           pattern="[0-9]"
           ref={inputRef}
           type="number"
           placeholder="Type a number"
         />
-        <button onClick={plus}>Add +</button>
-        <button onClick={minus}>Minus -</button>
-        <button onClick={times}>Times *</button>
-        <button onClick={divide}>Divide /</button>
-        <button onClick={resetInput}>Reset Input</button>
-        <button onClick={resetResult}>Reset Result</button>
+        <div className="btn-group mt-4 shadow-sm">
+          <button className="btn btn-outline-dark" onClick={plus}>Add +</button>
+          <button className="btn btn-outline-dark" onClick={minus}>Minus -</button>
+          <button className="btn btn-outline-dark" onClick={times}>Times *</button>
+          <button className="btn btn-outline-dark" onClick={divide}>Divide /</button>
+        </div>
+        <br />
+        <div className="mt-4 shadow-sm">
+          <button className="btn btn-danger me-2" onClick={resetInput}>Reset Input</button>
+          <button className="btn btn-danger" onClick={resetResult}>Reset Result</button>
+        </div>
       </form>
     </div>
   );
